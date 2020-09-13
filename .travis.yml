@@ -62,7 +62,8 @@ deploy:
 	overwrite: true
 	skip-cleanup: true
 	api_key: $GITHUB_TOKEN
-	file: bin/*
+	file: bin/**
 	on:
 	  tags: true
+
 
