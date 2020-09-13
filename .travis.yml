@@ -11,7 +11,7 @@ cache:
   directories:
     - $SCONS_CACHE
 
-matrix:
+jobs:
   include:
 
     - name: Linux Release
