@@ -57,3 +57,12 @@ script:
       sh ./misc/travis/clang-format.sh;
     fi
 
+deploy:
+	provider: releases
+	overwrite: true
+	skip-cleanup: true
+	api_key: $GITHUB_TOKEN
+	file: bin/**
+	on:
+	  tags: true
+
