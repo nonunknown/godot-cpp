@@ -65,6 +65,3 @@ deploy:
   file: bin/*
   on:
     tags: true
-	  tags: true
-
-
