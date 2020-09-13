@@ -13,16 +13,6 @@ cache:
 
 matrix:
   include:
-    - name: Linux Debug + Static Checks
-      os: linux
-      compiler: gcc
-      env: TARGET=debug STATIC_CHECKS=yes
-      addons:
-        apt:
-          sources:
-            - llvm-toolchain-xenial-6.0
-          packages:
-            [scons, pkg-config, build-essential, p7zip-full, clang-format-6.0]
 
     - name: Linux Release
       os: linux
@@ -33,19 +23,11 @@ matrix:
             [scons, pkg-config, build-essential, p7zip-full]
       env: TARGET=release
 
-    - name: macOS Debug
-      os: osx
-      compiler: clang
-      env: TARGET=debug
 
     - name: macOS Release
       os: osx
       compiler: clang
       env: TARGET=release
-
-    - name: Windows MSVC Debug
-      os: windows
-      env: TARGET=debug
 
     - name: Windows MSVC Release
       os: windows
@@ -74,3 +56,4 @@ script:
   - if [[ "$STATIC_CHECKS" == "yes" ]]; then
       sh ./misc/travis/clang-format.sh;
     fi
+
