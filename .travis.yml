@@ -58,12 +58,12 @@ script:
     fi
 
 deploy:
-	provider: releases
-	overwrite: true
-	skip-cleanup: true
-	api_key: $GITHUB_TOKEN
-	file: bin/*
-	on:
+  provider: releases
+  overwrite: true
+  skip-cleanup: true
+  api_key: $GITHUB_TOKEN
+  file: bin/*
+  on:
 	  tags: true
 
 
